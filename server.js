@@ -23,21 +23,22 @@ fastify.get('/students', async (request, reply) => {
 
 // Ajouter un étudiant
 fastify.post('/students', async (request, reply) => {
-    const { prenom, note } = request.body;
-    db.run('INSERT INTO students (name, grade) VALUES (?, ?)', [prenom, note], function(err) {
+    const { name, grade } = request.body;
+    db.run('INSERT INTO students (name, grade) VALUES (?, ?)', [name, grade], function(err) {
         if (err) {
             return reply.status(500).send({ error: 'Erreur serveur' });
         }
-        reply.send({ id: this.lastID, prenom, note });
+        reply.send({ id: this.lastID, name, grade });
     });
 });
 
 
-// Écoute sur le port 3000
+
+// Écoute sur le port 3001
 const start = async () => {
     try {
         await fastify.listen({ port: 3000 });
-        console.log(`Serveur lancé sur http://localhost:3000`);
+        console.log(`Serveur lancé sur http://localhost:3001`);
     } catch (err) {
         fastify.log.error(err);
         process.exit(1);

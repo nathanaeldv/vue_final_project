@@ -3,7 +3,7 @@ const path = require('path');
 
 const DB_PATH = path.join(__dirname, 'my_database.sqlite');
 
-// Ouvre la base de données en mode lecture/écriture
+// Ouvre la bdd en mode lecture/ écriture
 const db = new sqlite3.Database(DB_PATH, sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
         return console.error(err.message);
