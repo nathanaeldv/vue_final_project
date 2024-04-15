@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import StudentsList from './components/StudentsList.vue';
-import Form from './components/Form.vue';
+import StudentsList from './components/StudentsList.vue'
+import Form from './components/Form.vue'
 
 export default {
   name: 'App',
@@ -21,11 +21,11 @@ export default {
     fetchStudents() {
       // Appelle fetchStudents sur StudentsList en utilisant la référence 'studentsList'
       if (this.$refs.studentsList) {
-        this.$refs.studentsList.fetchStudents();
+        this.$refs.studentsList.fetchStudents()
       }
     }
   }
-};
+}
 </script>
 
 <style>

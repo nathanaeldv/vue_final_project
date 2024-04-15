@@ -1,12 +1,14 @@
-import { createApp } from 'vue';
-import App from './App.vue';
-import axios from 'axios';
+import './assets/styles.css'
 
-const app = createApp(App);
+import { createApp } from 'vue'
+import App from './App.vue'
+import axios from 'axios'
+
+const app = createApp(App)
 
 // Config globale d'Axios
 app.config.globalProperties.$axios = axios.create({
-    baseURL: 'http://localhost:3001', // URL de base du backend
-});
+  baseURL: 'http://localhost:3000' // URL de base du backend -> server
+})
 
-app.mount('#app');
+app.mount('#app')
